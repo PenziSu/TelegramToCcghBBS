@@ -1,13 +1,8 @@
-import urllib2
-from bs4 import BeautifulSoup
-import json
-import shlex
-url="https://api.telegram.org/bot239286896:AAHslOboDCVFX0NARtR_qyeBsbN9OmWtg8M/getMe"
-page = urllib2.urlopen(url)
-
-resp = page.read()
-
-#contant = json.dumps(contant, sort_keys=True, indent=4, separators=(',',':'))
-#print (contant)
-
-#print dict(token.split(':') for token in shlex.split(resp))
+import telegram
+#------------------------------------#
+bot = telegram.Bot(token='239286896:AAHslOboDCVFX0NARtR_qyeBsbN9OmWtg8M')
+updates = bot.getUpdates()
+chat_id = bot.getUpdates()[-1].message.chat_id
+file_id = 'AgADBQADtKcxG4kaIg7HyOv7yBbo_jksyjIABD3uyx_7znpHW0wBAAEC'
+newFile = bot.getFile(file_id)
+newFile.download('.\data\download456.jpg')
